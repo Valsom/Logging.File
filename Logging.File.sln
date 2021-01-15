@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30803.129
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Valsom.Logging.File", "Valsom.Logging.File\Valsom.Logging.File.csproj", "{DFD12C02-E95B-40AB-8CF4-31C443EABED3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Valsom.Logging.File.Test", "Valsom.Logging.File.Test\Valsom.Logging.File.Test.csproj", "{CFA13922-5BBA-4AFB-9A63-A23317279E4B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFD12C02-E95B-40AB-8CF4-31C443EABED3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFD12C02-E95B-40AB-8CF4-31C443EABED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFD12C02-E95B-40AB-8CF4-31C443EABED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFD12C02-E95B-40AB-8CF4-31C443EABED3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFA13922-5BBA-4AFB-9A63-A23317279E4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFA13922-5BBA-4AFB-9A63-A23317279E4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFA13922-5BBA-4AFB-9A63-A23317279E4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFA13922-5BBA-4AFB-9A63-A23317279E4B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A61EEF0C-E5BF-4F73-B804-5A964DC3B012}
+	EndGlobalSection
+EndGlobal
