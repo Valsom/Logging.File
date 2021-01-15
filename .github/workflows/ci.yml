@@ -113,6 +113,7 @@ jobs:
       semver: ${{steps.VERSION.outputs.semver}}
       nuget: ${{steps.VERSION.outputs.nuget}}
       applicable: ${{steps.VERSION.outputs.applicable}}
+
     steps:
       - name: Extract branch name
         shell: bash
@@ -153,6 +154,7 @@ jobs:
 
       - name: Apply changes
         if: ${{ steps.VERSION.outputs.applicable == 'true' || steps.extract_branch.outputs.branch == env.main-branch}}
+        uses: EndBug/add-and-commit@v6.2.0
         with:
           author_name: github-actions[bot]
           author_email: github-actions[bot]@users.noreply.github.com
