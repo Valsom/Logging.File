@@ -4,7 +4,7 @@ on: [push, pull_request]
 env:
   nuget-name: ${{ secrets.WORKFLOW_PACKAGE_NAME }}
   project-name: ${{ secrets.WORKFLOW_PROJECT_NAME }}
-  main-branch: ${{ secrets.WORKFLOW_MAIN_BRANCH }}
+  main-branch: master
 
 jobs:
   build:

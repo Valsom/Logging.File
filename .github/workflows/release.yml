@@ -5,7 +5,7 @@ on:
 
 env:
   nuget-name: ${{ secrets.WORKFLOW_PACKAGE_NAME }}
-  main-branch: ${{ secrets.WORKFLOW_MAIN_BRANCH }}
+  main-branch: master
 
 jobs:
   build:
