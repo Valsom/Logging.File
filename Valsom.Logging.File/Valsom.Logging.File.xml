@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Valsom.Logging.File</name>
+    </assembly>
+    <members>
+        <member name="T:Valsom.Logging.File.FileLogger">
+            <summary>   
+            A colorful console implementation for <seealso cref="T:Microsoft.Extensions.Logging.ILogger"/>
+            </summary>
+        </member>
+        <member name="M:Valsom.Logging.File.FileLogger.IsEnabled(Microsoft.Extensions.Logging.LogLevel)">
+            <inheritdoc />
+        </member>
+        <member name="M:Valsom.Logging.File.FileLogger.BeginScope``1(``0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Valsom.Logging.File.FileLogger.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})">
+            <inheritdoc />
+        </member>
+        <member name="M:Valsom.Logging.File.FileLoggerExtensions.AddFile(Microsoft.Extensions.Logging.ILoggingBuilder,System.String,System.String,Valsom.Logging.File.Formats.Abstractions.IFileNamingFormat,Valsom.Logging.File.Formats.Abstractions.IFileFormat)">
+            <summary>
+            Adds a <see cref="T:Valsom.Logging.File.FileLogger"/> instance to the <seealso cref="T:Microsoft.Extensions.Logging.ILoggingBuilder"/>
+            </summary>
+            <param name="name">The name of this log file</param>
+            <param name="directory">The directory of the log file</param>
+            <param name="namingFormat">The naming format applied</param>
+            <param name="format">The format applied</param>
+        </member>
+        <member name="M:Valsom.Logging.File.FileLoggerProvider.#ctor(System.String,System.IO.DirectoryInfo,Valsom.Logging.File.Formats.Abstractions.IFileNamingFormat,Valsom.Logging.File.Formats.Abstractions.IFileFormat)">
+            <summary>
+            Creates a new instance of the <see cref="T:Valsom.Logging.File.FileLoggerProvider"/> class
+            </summary>
+        </member>
+        <member name="M:Valsom.Logging.File.FileLoggerProvider.Dispose">
+            <summary>
+            Disposes of the logger
+            </summary>
+        </member>
+        <member name="M:Valsom.Logging.File.FileLoggerProvider.CreateLogger(System.String)">
+            <summary>
+            Creates a new ConsoleLogger
+            </summary>
+            <param name="categoryName">The category of these logs</param>
+            <returns></returns>
+        </member>
+        <member name="T:Valsom.Logging.File.Formats.Abstractions.IFileFormat">
+            <summary>
+            A format used for formatting the file
+            </summary>
+        </member>
+        <member name="T:Valsom.Logging.File.Formats.Abstractions.IFileNamingFormat">
+            <summary>
+            A format used for naming the file
+            </summary>
+        </member>
+        <member name="M:Valsom.Logging.File.Formats.Default.DefaultFileFormat.CreateLogEntry(Microsoft.Extensions.Logging.LogLevel,System.String,Microsoft.Extensions.Logging.EventId,System.String,System.Exception)">
+            <inheritdoc />
+        </member>
+        <member name="M:Valsom.Logging.File.Formats.Default.DefaultFileNamingFormat.NameFile(System.IO.DirectoryInfo,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:Valsom.Logging.File.Formats.FileFormats">
+            <summary>
+            Default file formats
+            </summary>
+        </member>
+        <member name="P:Valsom.Logging.File.Formats.FileFormats.Default">
+            <summary>
+            The default file format
+            </summary>
+        </member>
+        <member name="T:Valsom.Logging.File.Formats.FileNamingFormats">
+            <summary>
+            Default file naming formats
+            </summary>
+        </member>
+        <member name="P:Valsom.Logging.File.Formats.FileNamingFormats.Default">
+            <summary>
+            The default file naming format
+            </summary>
+        </member>
+    </members>
+</doc>
