@@ -71,7 +71,7 @@ jobs:
           author_email: github-actions[bot]@users.noreply.github.com
           message: "Bumped version to ${{env.GitVersion_LegacySemVer}}"
 
-  build:
+ build:
     name: Build
     needs: [update-version]
     runs-on: ubuntu-latest
@@ -106,7 +106,7 @@ jobs:
           path: "/home/runner/work/${{ github.event.repository.name }}/${{ github.event.repository.name }}/${{ github.event.repository.name }}/bin/Release"
           if-no-files-found: error
 
-  publish-nuget:
+ publish-nuget:
     needs: [build, update-version, test]
     name: Publish prerelease package
     if: ${{ needs.update-version.outputs.applicable == 'true' }}
