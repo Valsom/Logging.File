@@ -22,7 +22,7 @@ jobs:
       - name: Test
         run: dotnet test --no-restore --no-build --configuration Release
 
-  update-version:
+ update-version:
     needs: [test]
     name: Update version
     if: ${{ github.event_name != 'pull_request' }}
