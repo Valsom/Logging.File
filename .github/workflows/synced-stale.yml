@@ -1,0 +1,21 @@
+name: "Process stale issues"
+on:
+  schedule:
+    - cron: "00 0 * * *"
+
+env:
+  days-after-stale: 21
+  days-after-closed: 7
+
+jobs:
+  stale:
+    if: "!contains(github.event.repository.name, 'Actions')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v3
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          days-before-stale: ${{env.days-after-stale}}
+          days-before-close: ${{env.days-after-closed}}
+          stale-issue-message: "It's pretty quiet out here, I'm marking this issue as `stale` for now. Comment or remove the stale label or this issue will be closed in  ${{env.days-after-closed}} days."
+          stale-pr-message: "It's pretty quiet out here, I'm marking this pull request as `stale` for now. Comment or remove the stale label or this pull request will be closed in  ${{env.days-after-closed}} days."
