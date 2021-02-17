@@ -48,10 +48,6 @@ jobs:
       - name: Fetch git tags
         run: git fetch --tags --unshallow
 
-      - name: Fetch main branch
-        if: github.ref != 'refs/heads/main'
-        run: git branch --create-reflog main origin/main
-
       - name: Update version
         run: dotnet-gitversion /updateprojectfiles /updateassemblyinfo /output buildserver
 
