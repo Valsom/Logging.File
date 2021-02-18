@@ -10,8 +10,8 @@
     <PackageProjectUrl>https://github.com/Valsom/Logging.File</PackageProjectUrl>
     <AssemblyVersion>0.1.0.0</AssemblyVersion>
     <FileVersion>0.1.0.0</FileVersion>
-    <InformationalVersion>0.1.0-alpha.38+Branch.dev.Sha.9e2f9df6432f5954a75ce99a7160dba30fb97096</InformationalVersion>
-    <Version>0.1.0-alpha0038</Version>
+    <InformationalVersion>0.1.0-alpha.41+Branch.dev.Sha.bce4029608d5fa2f2f538b54b4e789ef17f873cc</InformationalVersion>
+    <Version>0.1.0-alpha0041</Version>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>C:\Users\somfi\Documents\GitHub\Valsom\Logging.File\Valsom.Logging.File\Valsom.Logging.File.xml</DocumentationFile>
