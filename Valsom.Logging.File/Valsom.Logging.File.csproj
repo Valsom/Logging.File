@@ -10,7 +10,7 @@
     <PackageProjectUrl>https://github.com/Valsom/Logging.File</PackageProjectUrl>
     <AssemblyVersion>0.1.0.0</AssemblyVersion>
     <FileVersion>0.1.0.0</FileVersion>
-    <InformationalVersion>0.1.0+17.Branch.main.Sha.2f39a0fd2262a291edbe3c2415150bb623936b59</InformationalVersion>
+    <InformationalVersion>0.1.0+19.Branch.main.Sha.677f280677eb765cd4c04c831a712c24709fa1a0</InformationalVersion>
     <Version>0.1.0</Version>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
