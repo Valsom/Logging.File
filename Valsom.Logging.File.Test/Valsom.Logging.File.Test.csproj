@@ -4,8 +4,8 @@
     <IsPackable>false</IsPackable>
     <AssemblyVersion>0.1.0.0</AssemblyVersion>
     <FileVersion>0.1.0.0</FileVersion>
-    <InformationalVersion>0.1.0-alpha.20+Branch.dev.Sha.4f93192d4240f3ccda967f0201dab7b838bb99bd</InformationalVersion>
-    <Version>0.1.0-alpha0020</Version>
+    <InformationalVersion>0.1.0-alpha.23+Branch.dev.Sha.b23356605f151c6d2ef15db0358ef35b40e8007a</InformationalVersion>
+    <Version>0.1.0-alpha0023</Version>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="LiquidTestReports.Markdown" Version="1.0.9" />
