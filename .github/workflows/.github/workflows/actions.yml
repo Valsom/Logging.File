@@ -1,0 +1,22 @@
+name: Sync actions
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  files:
+    name: Sync actions
+    runs-on: ubuntu-latest
+    steps:
+      - uses: adrianjost/files-sync-action@v1.4.1
+        with:
+          GITHUB_TOKEN: '${{ secrets.SYNC_GITHUB_TOKEN }}'
+          GIT_USERNAME: github-actions[bot]
+          GIT_EMAIL: github-actions[bot]@users.noreply.github.com
+          FILE_PATTERNS: |-
+            ^.*\.yml$
+          TARGET_ROOT: /.github/workflows/
+          TARGET_REPOS: |-
+            Somfic/Net-Test
+            Valsom/Logging.File
+            Valsom/Logging.PrettyConsole
