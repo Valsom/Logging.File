@@ -24,15 +24,17 @@ namespace Valsom.Logging.File.Formats.Default
 
             var now = DateTime.Now;
 
-            // 2021/01/23 24:12:23.400
+            // 2021/01/23 24:12:23.400 debug 
             entry.Append($"{now.ToString("yyyy/MM/dd HH:mm:ss.fff", CultureInfo.InvariantCulture)} ");
-
+            
             // debug
             entry.Append($"{logLevel.ToString().ToLower(),5} ");
 
             // Somfic.Logging.Test.Source
             entry.Append($"{category} ");
 
+            entry.AppendLine();
+            entry.Append("                              ");
             entry.Append(message);
 
             if (ex != null)
@@ -42,6 +44,7 @@ namespace Valsom.Logging.File.Formats.Default
                 while (ex != null)
                 {
                     entry.AppendLine();
+                    entry.Append("                              ");
 
                     // Invalid file format
                     entry.Append(GetPrettyExceptionName(ex));
@@ -68,6 +71,8 @@ namespace Valsom.Logging.File.Formats.Default
                         string stackLine = stackLines.ElementAt(index).Trim();
 
                         entry.AppendLine();
+                        entry.Append("                              ");
+                        
                         entry.Append(index + 1);
                         entry.Append($": {stackLine}");
                     }
@@ -89,12 +94,6 @@ namespace Valsom.Logging.File.Formats.Default
             {
                 case "I o":
                     output = "IO";
-                    break;
-                case "My sql":
-                    output = "MySQL";
-                    break;
-                case "Sql":
-                    output = "SQL";
                     break;
             }
 

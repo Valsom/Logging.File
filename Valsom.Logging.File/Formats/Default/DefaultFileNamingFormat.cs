@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 using Valsom.Logging.File.Formats.Abstractions;
 
@@ -14,13 +15,13 @@ namespace Valsom.Logging.File.Formats.Default
         /// <inheritdoc />
         public string NameFile(DirectoryInfo directory, string name)
         {
-            int i = 0;
+            var i = 0;
 
             while (true)
             {
                 i++;
 
-                string file = $"{name}.{i:000}.log";
+                var file = $"{name}.{DateTime.Now.Year}-{DateTime.Now.Month}-{DateTime.Now.Day}.{i:000}.log";
 
                 if (directory.GetFiles(file).Length == 0)
                 {

@@ -18,7 +18,7 @@
         <member name="M:Valsom.Logging.File.FileLogger.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})">
             <inheritdoc />
         </member>
-        <member name="M:Valsom.Logging.File.FileLoggerExtensions.AddFile(Microsoft.Extensions.Logging.ILoggingBuilder,System.String,System.String,Valsom.Logging.File.Formats.Abstractions.IFileNamingFormat,Valsom.Logging.File.Formats.Abstractions.IFileFormat)">
+        <member name="M:Valsom.Logging.File.FileLoggerExtensions.AddFile(Microsoft.Extensions.Logging.ILoggingBuilder,System.String,System.String,Valsom.Logging.File.Formats.Abstractions.IFileFormat,Valsom.Logging.File.Formats.Abstractions.IFileNamingFormat)">
             <summary>
             Adds a <see cref="T:Valsom.Logging.File.FileLogger"/> instance to the <seealso cref="T:Microsoft.Extensions.Logging.ILoggingBuilder"/>
             </summary>

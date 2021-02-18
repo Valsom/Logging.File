@@ -14,7 +14,7 @@ namespace Valsom.Logging.File
         /// <param name="directory">The directory of the log file</param>
         /// <param name="namingFormat">The naming format applied</param>
         /// <param name="format">The format applied</param>
-        public static ILoggingBuilder AddFile(this ILoggingBuilder builder, string name, string directory, IFileNamingFormat namingFormat = null, IFileFormat format = null)
+        public static ILoggingBuilder AddFile(this ILoggingBuilder builder, string name, string directory, IFileFormat format = null, IFileNamingFormat namingFormat = null)
         {
             if (namingFormat == null) { namingFormat = FileNamingFormats.Default; }
             if (format == null) { format = FileFormats.Default; }
