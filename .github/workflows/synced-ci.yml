@@ -68,7 +68,7 @@ jobs:
           message: "Bumped version to ${{env.GitVersion_LegacySemVer}}"
 
  build:
-    name: Build
+    name: Publish
     needs: [update-version]
     runs-on: ubuntu-latest
     steps:
@@ -97,7 +97,7 @@ jobs:
       
       - name: Publish solution to NuGet
         if: ${{ needs.update-version.outputs.applicable == 'true' }}
-        run: dotnet nuget push '*.nupkg' -k ${{secrets.NUGET_KEY}} -s https://api.nuget.org/v3/index.json --skip-duplicate
+        run: dotnet nuget push *.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_KEY}} --skip-duplicate
 
       - name: Unlist earlier prerelease packages
         if: ${{ needs.update-version.outputs.applicable == 'true' }}
