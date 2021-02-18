@@ -70,6 +70,7 @@ jobs:
  build:
     name: Publish
     needs: [update-version]
+    if: ${{ needs.update-version.outputs.applicable == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - name: Extract branch name
@@ -92,15 +93,12 @@ jobs:
         run: dotnet build --configuration Release
 
       - name: Pack solution
-        if: ${{ needs.update-version.outputs.applicable == 'true' }}
         run: dotnet pack --configuration Release --output .
       
       - name: Publish solution to NuGet
-        if: ${{ needs.update-version.outputs.applicable == 'true' }}
         run: dotnet nuget push *.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_KEY}} --skip-duplicate
 
       - name: Unlist earlier prerelease packages
-        if: ${{ needs.update-version.outputs.applicable == 'true' }}
         uses: darenm/unlist-nuget@v1
         with:
           NUGET_PACKAGE: "${{ github.event.repository.name }}"
