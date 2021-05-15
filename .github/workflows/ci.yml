@@ -90,17 +90,29 @@ jobs:
         run: dotnet restore
  
       - name: Build solution
-        run: dotnet build --configuration Release
+        run: dotnet build --configuration Release --no-restore
 
       - name: Pack solution
-        run: dotnet pack --configuration Release --output .
-      
+        run: dotnet pack --configuration Release --no-restore --no-build --output .
+         
+      - name: Get all files
+        id: files
+        run: |
+         echo ::set-output name=ALL_FILES::$(ls)
+         
+      - name: Get package name
+        uses: actions-ecosystem/action-regex-match@v2
+        id: package
+        with:
+         text: ${{ steps.files.outputs.ALL_FILES }}
+         regex: '([^ ]*)\.[0-9]\.[0-9]\.[0-9](?:(?:(?:-alpha)|(?:-beta))[0-9]{4,})?'  
+     
       - name: Publish solution to NuGet
         run: dotnet nuget push *.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_KEY}} --skip-duplicate
-
+         
       - name: Unlist earlier prerelease packages
         uses: darenm/unlist-nuget@v1
         with:
-          NUGET_PACKAGE: "${{ github.event.repository.name }}"
+          NUGET_PACKAGE: ${{ steps.package.outputs.group1 }}
           VERSION_REGEX: ".*${{needs.update-version.outputs.label}}.*"
           NUGET_KEY: ${{secrets.NUGET_KEY}}
