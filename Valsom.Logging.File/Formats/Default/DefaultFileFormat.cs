@@ -14,21 +14,21 @@ namespace Valsom.Logging.File.Formats.Default
     {
         internal DefaultFileFormat()
         {
-
         }
 
         /// <inheritdoc />
-        public StringBuilder CreateLogEntry(LogLevel logLevel, string category, EventId eventId, string message, Exception ex)
+        public StringBuilder CreateLogEntry(LogLevel logLevel, string category, EventId eventId, string message,
+            Exception ex)
         {
             StringBuilder entry = new StringBuilder();
 
             var now = DateTime.Now;
 
-            // 2021/01/23 24:12:23.400 debug 
+            // 2021/01/23 24:12:23.400 
             entry.Append($"{now.ToString("yyyy/MM/dd HH:mm:ss.fff", CultureInfo.InvariantCulture)} ");
-            
+
             // debug
-            entry.Append($"{logLevel.ToString().ToLower(),5} ");
+            entry.Append($"{GetLogLevel(logLevel).ToLower(),5} ");
 
             // Somfic.Logging.Test.Source
             entry.Append($"{category} ");
@@ -63,7 +63,7 @@ namespace Valsom.Logging.File.Formats.Default
 
                 if (!string.IsNullOrWhiteSpace(stack))
                 {
-                    IEnumerable<string> stackLines = stack.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+                    IEnumerable<string> stackLines = stack.Split(new[] {Environment.NewLine}, StringSplitOptions.None);
                     stackLines = stackLines.Reverse();
 
                     for (int index = 0; index < stackLines.Count(); index++)
@@ -72,7 +72,7 @@ namespace Valsom.Logging.File.Formats.Default
 
                         entry.AppendLine();
                         entry.Append("                              ");
-                        
+
                         entry.Append(index + 1);
                         entry.Append($": {stackLine}");
                     }
@@ -80,6 +80,29 @@ namespace Valsom.Logging.File.Formats.Default
             }
 
             return entry;
+        }
+
+        private string GetLogLevel(LogLevel logLevel)
+        {
+            switch (logLevel)
+            {
+                case LogLevel.Trace:
+                    return "Trace";
+                case LogLevel.Debug:
+                    return "Debug";
+                case LogLevel.Information:
+                    return "Info";
+                case LogLevel.Warning:
+                    return "Warn";
+                case LogLevel.Error:
+                    return "Error";
+                case LogLevel.Critical:
+                    return "Fail";
+                case LogLevel.None:
+                    return "None";
+                default:
+                    return "?????";
+            }
         }
 
         private string GetPrettyExceptionName(Exception ex)
@@ -99,5 +122,5 @@ namespace Valsom.Logging.File.Formats.Default
 
             return output;
         }
-    } 
+    }
 }
