@@ -25,10 +25,10 @@ namespace Valsom.Logging.File.Formats.Default
             var now = DateTime.Now;
 
             // 2021/01/23 24:12:23.400 
-            entry.Append($"{now.ToString("yyyy/MM/dd HH:mm:ss.fff", CultureInfo.InvariantCulture)} ");
+            entry.Append($"{now.ToString("yyyy-MM-dd HH:mm:ss.fff", CultureInfo.InvariantCulture)} ");
 
             // debug
-            entry.Append($"{GetLogLevel(logLevel).ToLower(),5} ");
+            entry.Append($"{GetLogLevel(logLevel).ToUpper(),5} ");
 
             // Somfic.Logging.Test.Source
             entry.Append($"{category} ");
